@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Your head content remains unchanged -->
+</head>
+
+<body>
+    <div class="roadsection">
+        <img class="roadimg" src="C:\Users\Mayer\OneDrive\Desktop\imagematerial\road.jpg" alt="">
+        <div class="content-wrapper">
+
+            <div class="schedule">
+                <div class="event" style="margin-left:10%;margin-bottom: 8%;">
+                    <h1 class="firsthover">1</h1>
+                    <div class="description">
+                        <img src="C:\Users\Mayer\OneDrive\Desktop\imagematerial\Soundtalksession1_crop.jpg.preset.600.jpeg"
+                            alt="">
+                        <button>
+                            TALK-3 <BR>
+                            <i class="fa-solid fa-clock"></i> 10:00 AM - 10:30 AM <i
+                                class="fa-solid fa-location-dot"></i> LT-4
+                        </button>
+                    </div>
+                </div>
+                <!-- Repeat for other events -->
+                <div class="event" style="margin-left: 250px; width:100px;margin-top: 10%;">
+                    <h1 class="secondhover">2</h1>
+                    <div class="description">
+                        <img src="C:\Users\Mayer\OneDrive\Desktop\imagematerial\201603161053075876.jpg" alt="">
+                        <button>
+                            TEA BREAK<BR>
+                            <i class="fa-solid fa-clock"></i> 10:30 AM -11:00AM <i class="fa-solid fa-location-dot"></i>
+                            IN FRONT OFLT-4
+                        </button>
+                    </div>
+                </div>
+                <div class="event" style="margin-left: 400px; width:100px;margin-top: 30px;">
+                    <h1>3</h1>
+                    <div class="description">
+                        <img src="C:\Users\Mayer\OneDrive\Desktop\imagematerial\Soundtalksession1_crop.jpg.preset.600.jpeg"
+                            alt="">
+                        <button>
+                            ONLINE TALK<BR>
+                            <i class="fa-solid fa-clock"></i> 11:00AM-12:00PM 
+                        </button>
+                    </div>
+                </div>
+                <div class="event" style="margin-left: 700px; width:100px;margin-top:100px;">
+                    <h1>4</h1>
+                    <div class="description">
+                        <img src="C:\Users\Mayer\OneDrive\Desktop\imagematerial\download (2).jpg"
+                            alt="">
+                        <button>
+                            LUNCH<BR>
+                            <i class="fa-solid fa-clock"></i> 12:00 PM -2:00 PM
+                        </button>
+                    </div>
+                </div>
+                <div class="event" style="margin-left: 730px; width:100px;margin-top: 380px;">
+                    <h1>5</h1>
+                    <div class="description" style="transform: translate(-300px,-150px);">
+                        <img src="C:\Users\Mayer\OneDrive\Desktop\imagematerial\ideathon.png" alt="">
+                        <button>
+                            IDEATHON<BR>
+                            <i class="fa-solid fa-clock"></i> 2:00 PM-3:30 PM
+                        </button>
+                    </div>
+                </div>
+                <div class="event" style="margin-left: 900px; width:100px;margin-top: 450px;">
+
+                    <div class="description" style="transform: translate(-50px,-300px);">
+                        <img src="C:\Users\Mayer\OneDrive\Desktop\imagematerial\SQUID.jpg" alt="">
+                        <button>
+                            SQUID GAME<BR>
+                            <i class="fa-solid fa-clock"></i> 3:00 PM - 4:00 PM
+                            <i class="fa-solid fa-location-dot"> JBS
+                        </button>
+                    </div>
+                    <h1>6</h1>
+                </div>
+                <div class="event" style="margin-left: 1200px; width:100px;margin-top: 380px;">
+                    <h1>7</h1>
+                    <div class="description" style="transform: translate(-50px,-300px);">
+                        <img src="C:\Users\Mayer\OneDrive\Desktop\imagematerial\teabreak.jpg" alt="">
+                        <button>
+                            TEA BREAK<BR>
+                            <i class="fa-solid fa-clock"></i> 4:00 PM-4:20 PM
+                            <i class="fa-solid fa-location-dot"></i> IN FRONT OF LT-4
+                        </button>
+                    </div>
+                </div>
+                <div class="event" style="margin-left: 1352px; width:100px;margin-top:480px;">
+                    <h1>8</h1>
+                    <div class="description" style="transform: translate(-350px,-500px);">
+                        <img src="C:\Users\Mayer\OneDrive\Desktop\imagematerial\CLOSING.jpg" alt="">
+                        <button>
+                            CLOSING CEREMONY<BR>
+                            <i class="fa-solid fa-clock"></i> 5:00 pm
+                            <i class="fa-solid fa-location-dot"></i> AUDI
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<style>
+    .content-wrapper {
+        position: relative;
+
+        color: white;
+        padding: 50px;
+        font-family: 'Charm', cursive;
+        z-index: 1;
+    }
+
+    h1 {
+        font-size: 4rem;
+        background: url('https://i.ibb.co/89Cf3dm/text-bg.png') no-repeat;
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        animation: moveBg 90s linear infinite;
+        -webkit-animation: moveBg 90s linear infinite;
+    }
+
+    @keyframes moveBg {
+        0% {
+            background-position: 0% 30%;
+        }
+
+        100% {
+            background-position: 100% 50%;
+        }
+    }
+body{
+   background-color: black;
+}
+    .roadsection {
+        overflow: hidden;
+        width: 100vw;
+        height: 100vh;
+        position: relative;
+        padding: 0;
+        margin:0;
+    }
+
+    .roadimg {
+        width: 100vw;
+        height: 100vh;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        
+    }
+
+    .schedule {
+        display: flex;
+
+        flex-wrap: wrap;
+    }
+
+    .event {
+        margin: 10px;
+        position: absolute;
+    }
+
+    .event h1 {
+        font-size: 2rem;
+    }
+
+    .description {
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        background: rgba(204, 235, 201, 0.8);
+        box-shadow: 0 0 10px 5px rgba(78, 241, 92, 0.7), inset 0 0 10px 5px rgba(0, 0, 0, 0.5);
+        transition: box-shadow 0.3s;
+        opacity: 0;
+        text-align: left;
+        padding: 10px;
+        width: 200px;
+    }
+
+    .event:hover .description {
+        opacity: 1;
+    }
+
+    .description img {
+        width: 100%;
+        height: auto;
+    }
+
+    .description button {
+        width: 100%;
+        height: auto;
+    }
+
+    h1 {
+        filter: drop-shadow(0 0 60px red);
+    }
+
+    .event:hover {
+        filter: drop-shadow(0 0 60px red);
+    }
+
+    .roadsection {
+        cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='80' height='78' viewport='0 0 100 100' style='fill:black;font-size:45px;'><text y='50%'>🎅🏻</text></svg>"), auto;
+    }
+</style>
+
+</html>
