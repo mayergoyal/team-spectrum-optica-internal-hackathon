@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+///////////////
+// END OF RESET
+///////////////
+$main-color-1: #2ecc71;
+$main-color-2: #27ae60;
+$second-color-1: #CC8914;
+$background-color: #363636;
+$bot-output-delay: 600ms;
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Roboto');
+
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  font-size: 1em;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+
+  line-height: 1.45;
+  background-color: linear-gradient(45deg, #00cc00, #000000);
+}
+
+.chatbot__overview {
+
+  background-color: linear-gradient(45deg, #00cc00, #000000);
+
+  display: flex;
+  flex-flow: row nowrap;
+  align-content: space-between;
+
+  // max-width: 35em;
+  min-height: 80vh;
+  max-height: 80vh;
+  margin: 0 auto;
+
+  // background-color: black;
+  // border: 1px solid #fff;
+  padding: 1em;
+  padding-bottom: 0;
+
+  // overflow-y: scroll;
+}
+
+.chatbot__overview--container {
+}
+
+.chatlist {
+  font-family: inherit;
+  font-size: 1em;
+
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: flex-end;
+
+  overflow-x: hidden;
+
+  width: 100%;
+  max-width: 35em;
+  max-height: 75vh;
+  margin: 0 auto;
+
+  .userInput, .bot__output {
+    padding: 0.85em;
+    margin: 0.5em;
+    max-width: 100%;
+
+    background-color: #91c5a5;
+    border-radius: 5px;
+    border-bottom: 1px solid #777;
+
+    // transition: all 300ms ease-in;
+  }
+  .userInput {
+    text-transform: lowercase;
+    box-shadow: 1px 1px 2px #666;
+    border-top: 4px solid $second-color-1;
+
+    opacity: 0;
+
+    animation-name: animateBubble;
+    animation-duration: 400ms;
+    animation-iteration-count: 1;
+    animation-play-state: running;
+    animation-fill-mode: forwards;
+  }
+  .bot__output {
+    align-self: flex-start;
+    box-shadow: -1px 1px 2px #666;
+    border-top: 4px solid $main-color-2;
+    // transform-origin: left 50%;
+    will-change: auto;
+    height: auto;
+
+    opacity: 0;
+
+    animation-name: animateBubble;
+    animation-duration: 400ms;
+    animation-iteration-count: 1;
+    animation-play-state: paused;
+    animation-fill-mode: forwards;
+    &:last-child {
+      display: none;
+    }
+  }
+  .bot__command {
+    // border-bottom: 2px solid $main-color-1;
+    color: #f5f5f5;
+    // background-color: $main-color-1;
+    color: $main-color-2;
+    font-weight: 600;
+    padding: 0.1em;
+  }
+  .bot__output:nth-child(1){
+    animation-delay: $bot-output-delay;
+    animation-play-state: running;
+  }
+  .bot__output:nth-child(2){
+    animation-delay: ($bot-output-delay * 2);
+    animation-play-state: running;
+  }
+  .bot__output:nth-child(3){
+    animation-delay: ($bot-output-delay * 3);
+    animation-play-state: running;
+  }
+  .bot__output--standard:last-child{
+    display: block;
+  }
+  .bot__output--failed {
+    display: block !important;
+  }
+  .bot__output--second-sentence {
+    display: block;
+  }
+  .bot__outputImage {
+    max-width: 16em;
+    height: 12em;
+  }
+}
+
+@keyframes animateBubble {
+  0%{
+    transform: translateY(-20%);
+    opacity: 0;
+  }
+  100%{
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+
+
+
+.block--background {
+  // background-color: $main-color-2;
+  background-color: $background-color;
+  width: 100vw;
+  height: 100vh;
+}
+
+#chatform {
+  display: flex;
+  justify-content: center;
+  // display: inline-block;
+  // height: 100%;
+  width: 80%;
+  max-width: 35em;
+  margin: 0 auto;
+  padding-top: 1em;
+
+  font-size: 1em;
+  font-family: Helvetica;
+  @media screen and(max-width: 29em) {
+    width: 90%;
+  }
+}
+
+.chatbox-area {
+  margin: 0 auto;
+  position: relative;
+  bottom: 0;
+  height: auto;
+  width: 100%;
+}
+
+textarea[name="chatbox"] {
+  resize: none;
+  border: 2px solid $main-color-2;
+  border-right: 0;
+  // border-bottom: 0;
+  width: 70%;
+  background-color: transparent;
+  color: black;
+  // max-width: 30em;
+  height: 3em;
+  margin: 0;
+  padding: 0.75em;
+  // float: left;
+  border-radius: 8px 0px 0px 8px;
+  font-family: inherit;
+  font-size: 1em;
+  &:focus {
+    outline: none;
+    border: 2px solid lighten($main-color-2, 15%);
+  }
+}
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color: #48629d;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+  color: #10100e;
+   opacity:  1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+  color: #0e0909;
+   opacity:  1;
+}
+
+input[type="submit"] {
+  -webkit-appearance: none;
+  appearance: none;
+  border: 0;
+
+  width: 25%;
+  margin: 0;
+
+ background-color: #000000;
+  color: #fff;
+  border: 2px solid $main-color-2;
+  border-left: 0;
+  border-radius: 0 8px 8px 0;
+
+  font-family: inherit;
+  font-size: 1em;
+
+  transition: 200ms all ease-in;
+  &:hover {
+    background-color: lighten($main-color-2, 15%);
+    border-color: lighten($main-color-2, 15%);
+    color: #fff;
+  }
+
+}
+
+.input__nested-list {
+  list-style: disc;
+  list-style-position: inside;
+  padding: 0.5em;
+  &:first-child {
+    padding-top: 1em;
+  }
+}
+
+.input__nested-link {
+  color: red;
+  text-decoration: none;
+  border-bottom: 1px solid $main-color-1;
+}
+
+
+::-webkit-scrollbar
+{
+  width: 0.65em;  /* for vertical scrollbars */
+  height: 0.65em; /* for horizontal scrollbars */
+}
+
+::-webkit-scrollbar-track
+{
+  background: rgba(0, 0, 0, 0.1);
+}
+
+::-webkit-scrollbar-thumb
+{
+  background: rgba(0, 0, 0, 0.3);
+}
+body{
+  background-color:linear-gradient(#00cc00, #000000);
+  background: linear-gradient(to right, #06862d, #158b15, #000000);
+}
+</style>
+<body>
+<!-- Currently BROKEN!
+Working prototype on meesrutten.me :) -->
+<main class="page__main">
+  <div class="block--background">
+    <div class="chatbot__overview">
+      <ul class="chatlist">
+        <li class="bot__output bot__output--standard">HELLO BUDDY</li>
+        <li class="bot__output bot__output--standard">Here you can resolve your doubts !!</li>
+        <li class="bot__output bot__output--standard">
+          <span class="bot__output--second-sentence">You can ask me a bunch of things! <BR> type the highlighted text for that specific query</span>
+          <ul>
+            <li class="input__nested-list">Is there any <span class="bot__command">cost</span> for the event</li>
+            <li class="input__nested-list">Allowed <span class="bot__command">team size</span></li>
+            <li class="input__nested-list">Can I participate even having  <span class="bot__command">no technical background</span> ?</li>
+            <li class="input__nested-list">Can student from <span class="bot__command">other college</span> take part?</li>
+          </ul>
+          DO ASK!!
+        </li>
+      </ul>
+    </div>
+    <div class="chatbox-area">
+      <form action="" id="chatform">
+          <textarea placeholder="Talk to me!" class="chatbox" name="chatbox" resize: "none" minlength="2"></textarea>
+          <input class="submit-button" type="submit" value="send">
+      </form>
+    </div>
+        <div class="block--background"></div>
+
+</main>
+    
+  <script>
+var sendForm = document.querySelector('#chatform'),
+    textInput = document.querySelector('.chatbox'),
+    chatList = document.querySelector('.chatlist'),
+    userBubble = document.querySelectorAll('.userInput'),
+    botBubble = document.querySelectorAll('.bot__output'),
+    animateBotBubble = document.querySelectorAll('.bot__input--animation'),
+    overview = document.querySelector('.chatbot__overview'),
+    hasCorrectInput,
+    imgLoader = false,
+    animationCounter = 1,
+    animationBubbleDelay = 600,
+    input,
+    previousInput,
+    isReaction = false,
+    unkwnCommReaction = "I didn't quite get that.",
+    chatbotButton = document.querySelector(".submit-button")
+
+sendForm.onkeydown = function(e){
+  if(e.keyCode == 13){
+    e.preventDefault();
+
+    //No mix ups with upper and lowercases
+    var input = textInput.value.toLowerCase();
+
+    //Empty textarea fix
+    if(input.length > 0) {
+      createBubble(input)
+    }
+  }
+};
+
+sendForm.addEventListener('submit', function(e) {
+  //so form doesnt submit page (no page refresh)
+  e.preventDefault();
+
+  //No mix ups with upper and lowercases
+  var input = textInput.value.toLowerCase();
+
+  //Empty textarea fix
+  if(input.length > 0) {
+    createBubble(input)
+  }
+}) //end of eventlistener
+
+var createBubble = function(input) {
+  //create input bubble
+  var chatBubble = document.createElement('li');
+  chatBubble.classList.add('userInput');
+
+  //adds input of textarea to chatbubble list item
+  chatBubble.innerHTML = input;
+
+  //adds chatBubble to chatlist
+  chatList.appendChild(chatBubble)
+
+  checkInput(input);
+}
+
+var checkInput = function(input) {
+  hasCorrectInput = false;
+  isReaction = false;
+  //Checks all text values in possibleInput
+  for(var textVal in possibleInput){
+    //If user reacts with "yes" and the previous input was in textVal
+    if(input == "yes" || input.indexOf("yes") >= 0){
+      if(previousInput == textVal) {
+        console.log("sausigheid");
+
+        isReaction = true;
+        hasCorrectInput = true;
+        botResponse(textVal);
+      }
+    }
+    if(input == "no" && previousInput == textVal){
+      unkwnCommReaction = "For a list of commands type: Commands";
+      unknownCommand("I'm sorry to hear that :(")
+      unknownCommand(unkwnCommReaction);
+      hasCorrectInput = true;
+    }
+    //Is a word of the input also in possibleInput object?
+    if(input == textVal || input.indexOf(textVal) >=0 && isReaction == false){
+			console.log("succes");
+      hasCorrectInput = true;
+      botResponse(textVal);
+		}
+	}
+  //When input is not in possibleInput
+  if(hasCorrectInput == false){
+    console.log("failed");
+    unknownCommand(unkwnCommReaction);
+    hasCorrectInput = true;
+  }
+}
+
+// debugger;
+
+function botResponse(textVal) {
+  //sets previous input to that what was called
+  // previousInput = input;
+
+  //create response bubble
+  var userBubble = document.createElement('li');
+  userBubble.classList.add('bot__output');
+
+  if(isReaction == true){
+    if (typeof reactionInput[textVal] === "function") {
+    //adds input of textarea to chatbubble list item
+      userBubble.innerHTML = reactionInput[textVal]();
+    } else {
+      userBubble.innerHTML = reactionInput[textVal];
+    }
+  }
+
+  if(isReaction == false){
+    //Is the command a function?
+    if (typeof possibleInput[textVal] === "function") {
+      // console.log(possibleInput[textVal] +" is a function");
+    //adds input of textarea to chatbubble list item
+      userBubble.innerHTML = possibleInput[textVal]();
+    } else {
+      userBubble.innerHTML = possibleInput[textVal];
+    }
+  }
+  //add list item to chatlist
+  chatList.appendChild(userBubble) //adds chatBubble to chatlist
+
+  // reset text area input
+  textInput.value = "";
+}
+
+function unknownCommand(unkwnCommReaction) {
+  // animationCounter = 1;
+
+  //create response bubble
+  var failedResponse = document.createElement('li');
+
+  failedResponse.classList.add('bot__output');
+  failedResponse.classList.add('bot__output--failed');
+
+  //Add text to failedResponse
+  failedResponse.innerHTML = unkwnCommReaction; //adds input of textarea to chatbubble list item
+
+  //add list item to chatlist
+  chatList.appendChild(failedResponse) //adds chatBubble to chatlist
+
+  animateBotOutput();
+
+  // reset text area input
+  textInput.value = "";
+
+  //Sets chatlist scroll to bottom
+  chatList.scrollTop = chatList.scrollHeight;
+
+  animationCounter = 1;
+}
+
+function responseText(e) {
+
+  var response = document.createElement('li');
+
+  response.classList.add('bot__output');
+
+  //Adds whatever is given to responseText() to response bubble
+  response.innerHTML = e;
+
+  chatList.appendChild(response);
+
+  animateBotOutput();
+
+  console.log(response.clientHeight);
+
+  //Sets chatlist scroll to bottom
+  setTimeout(function(){
+    chatList.scrollTop = chatList.scrollHeight;
+    console.log(response.clientHeight);
+  }, 0)
+}
+
+function responseImg(e) {
+  var image = new Image();
+
+  image.classList.add('bot__output');
+  //Custom class for styling
+  image.classList.add('bot__outputImage');
+  //Gets the image
+  image.src = "/images/"+e;
+  chatList.appendChild(image);
+
+  animateBotOutput()
+  if(image.completed) {
+    chatList.scrollTop = chatList.scrollTop + image.scrollHeight;
+  }
+  else {
+    image.addEventListener('load', function(){
+      chatList.scrollTop = chatList.scrollTop + image.scrollHeight;
+    })
+  }
+}
+
+//change to SCSS loop
+function animateBotOutput() {
+  chatList.lastElementChild.style.animationDelay= (animationCounter * animationBubbleDelay)+"ms";
+  animationCounter++;
+  chatList.lastElementChild.style.animationPlayState = "running";
+}
+
+function commandReset(e){
+  animationCounter = 1;
+  previousInput = Object.keys(possibleInput)[e];
+}
+
+// hlep
+
+var possibleInput = {
+  // "hlep" : this.help(),
+  "cost" : function(){
+    responseText("well! you asked really a genuine question dear")
+    responseText("and surely you'll be glad to hear this that")
+    responseText("there is no cost of registration , its free")
+    commandReset(0);
+    return
+    },
+  "team size" : function(){
+    responseText("I will show you allowed team size");
+    
+    responseText("2-4 members")
+    commandReset(1);
+    return
+    },
+  "no technical background" : function(){
+    responseText("ohh dear!!");
+    responseText("creativity is not confined to any educational background or stream");
+    responseText("if your will is strong , no stream lines can weaken you");
+    responseText("irrespective of your belonging , you are open handedly welcomed to the event");
+    commandReset(2);
+    return
+    },
+  "other college" : function(){
+    responseText("Hey fellow being !!");
+    responseText("students from other colleges can participate");
+    responseText("even if you are school going one");
+    responseText("here we welcome u too");
+    commandReset(3);
+    return
+  },
+  "hello" : function(){
+    responseText("Hello dear");
+    responseText("how can we help you");
+    responseText("type your queries here");
+    
+    commandReset(4);
+    return
+  },
+  "name" : function(){
+    responseText("we are OPTICA JIIT ");
+    responseText("designed this by");
+    responseText("Mayer");
+    responseText("Anshika");
+    responseText("yash");
+    commandReset(5);
+    return
+  },
+  "vision" : function(){
+    responseText("Things I want to learn or do:");
+    responseText("Get great at CSS & JS animation");
+    responseText("Create 3D browser experiences");
+    responseText("Learn Three.js and WebGL");
+    responseText("Combine Motion Design with Front-End");
+    commandReset(6);
+    return
+  },
+  "contact" : function(){
+    responseText("email: <a href='mailto:meesrutten@gmail.com?Subject=Hello%20Mees' target='_top'>send me a message</a>");
+    responseText("Twitter: <a href='https://twitter.com/meesrttn'>@MeesRttn</a>");
+    commandReset(7);
+    return
+  },
+  "commands" : function(){
+    responseText("This is a list of commands Navvy knows:")
+    responseText("help, best work, about, vision, experience, hobbies / interests, contact, rick roll");
+    commandReset(8);
+    return
+  },
+  "rick roll" : function(){
+    window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+    },
+  // work experience
+}
+
+var reactionInput = {
+  "best work" : function(){
+    //Redirects you to a different page after 3 secs
+    responseText("On this GitHub page you'll find everything about Navvy");
+    responseText("<a href='https://github.com/meesrutten/chatbot'>Navvy on GitHub</a>")
+    animationCounter = 1;
+    return
+  },
+  "about" : function(){
+    responseText("Things I want to learn or do:");
+    responseText("Get great at CSS & JS animation");
+    responseText("Create 3D browser experiences");
+    responseText("Learn Three.js and WebGL");
+    responseText("Combine Motion Design with Front-End");
+    animationCounter = 1;
+    return
+    }
+}
+
+  </script>
+</body>
+
+</html>
+

@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>code of duty</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            overflow: auto;
+            background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+
+        }
+
+        .herosection {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+
+
+        .herotext {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            text-align: center;
+            color: black;
+            font-size: 9em;
+            font-weight: bold;
+            z-index: 0;
+            font-family: fantasy;
+            word-spacing: 5px;
+            opacity: 0.5;
+        }
+
+        .second {
+            background: linear-gradient(45deg, #0d4f0d, #000000);
+            color: white;
+            padding: 20px;
+        }
+
+        .intro img {
+            margin-left: 200px;
+            width: 400px;
+            height: 500px;
+            box-shadow: 0 0 10px 5px rgba(0, 204, 0, 0.7), inset 0 0 10px 5px rgba(0, 0, 0, 0.5);
+            /* Glowy shadow border */
+        }
+
+        img:hover {
+            transform: translate(20px, 30px);
+        }
+
+        .intro {
+            display: flex;
+            justify-content: space-between;
+
+        }
+
+        .writtenintro {
+            width: 750px;
+            height: 500px;
+        }
+
+        h2 {
+            margin-top: 0;
+            margin-left: 0;
+            margin-right: 0;
+            padding: 15px 30px;
+            background: linear-gradient(45deg, #00cc00, #000000);
+            /* Gradient background (green to black) */
+            box-shadow: 0 0 10px 5px rgba(0, 204, 0, 0.7), inset 0 0 10px 5px rgba(0, 0, 0, 0.5);
+            /* Glowy shadow border */
+            transition: box-shadow 0.3s;
+            position: relative;
+            font-family: fangsong, 'Arial', sans-serif;
+            font-style: italic;
+            font-size: 50px;
+            font-weight: bolder;
+            color: #dde1e5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            overflow: hidden;
+            background: linear-gradient(to right, #06862d, #158b15, #000000);
+            mix-blend-mode: color-dodge;
+            filter: drop-shadow(0 0 10px rgb(0, 0, 0));
+
+            /* Smoky Border */
+            &:before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                z-index: -1;
+                background: linear-gradient(45deg, #11aa3f, #2c3e50);
+                /* Gradient background */
+                filter: blur(20px);
+                /* Adjust the blur effect */
+                transform: skew(-20deg);
+            }
+
+            /* Text Shadow */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        h3 {
+            padding: 15px 30px;
+            background: linear-gradient(45deg, #00cc00, #000000);
+            /* Gradient background (green to black) */
+            box-shadow: 0 0 10px 5px rgba(0, 204, 0, 0.7), inset 0 0 10px 5px rgba(0, 0, 0, 0.5);
+            /* Glowy shadow border */
+            transition: box-shadow 0.3s;
+            position: relative;
+            font-family: fangsong, 'Arial', sans-serif;
+            font-style: italic;
+            font-size: 35px;
+            font-weight: bolder;
+            color: #dde1e5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            overflow: hidden;
+            background: linear-gradient(to right, #06862d, #158b15, #000000);
+            mix-blend-mode: color-dodge;
+
+            /* Smoky Border */
+            &:before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                z-index: -1;
+                background: linear-gradient(45deg, #11aa3f, #2c3e50);
+                /* Gradient background */
+                filter: blur(20px);
+                /* Adjust the blur effect */
+                transform: skew(-20deg);
+            }
+
+            /* Text Shadow */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .content {
+            font-size: 14px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            color: rgb(219, 217, 217);
+            filter: drop-shadow(0 0 10px white);
+        }
+
+        .herosection {
+            margin: 0;
+
+
+
+            background: black;
+            animation: auroraBackground 10s linear infinite;
+
+        }
+
+        @keyframes auroraBackground {
+            0% {
+                background: radial-gradient(circle, #286722, transparent 80%);
+            }
+
+            25% {
+                background: radial-gradient(circle, #08da2e, transparent 80%);
+            }
+
+            50% {
+                background: radial-gradient(circle, #1e8321, transparent 80%);
+            }
+
+            75% {
+                background: radial-gradient(circle, #12cd25, transparent 80%);
+            }
+
+            100% {
+                background: radial-gradient(circle, #024f08, transparent 80%);
+            }
+        }
+
+        .datei {
+            opacity: 0;
+            color: white;
+            width: 150px;
+            height: 150px;
+            font-size: 15px;
+
+        }
+
+        .rules {
+            display: flex;
+            justify-content: space-between;
+            margin: 55px;
+            flex-wrap: wrap;
+        }
+
+        .item-container .item:hover .datei {
+            opacity: 1;
+        }
+
+
+
+        .item-container img {
+            width: 150px;
+            height: 150px;
+        }
+
+        .item-container {
+            border-radius: 100%;
+            overflow: hidden;
+            filter: drop-shadow(0 0 10px white);
+            margin: 60px;
+            width: 150px;
+            height: 150px;
+        }
+
+        .item {
+            display: block;
+            width: 100%;
+            position: relative;
+            /* Added to position .datei relative to .item */
+        }
+
+        .datei {
+            opacity: 0;
+            color: white;
+            width: 150px;
+            height: 150px;
+            font-size: 11px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            /* Added for horizontal centering */
+            background-color: rgba(0, 0, 0, 0.7);
+            /* Added a background for better visibility */
+            transition: opacity 0.3s;
+            /* Added a transition for a smoother effect */
+        }
+
+
+
+        .item:hover .datei {
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="herosection">
+
+        <span class="herotext">IDEATHON</span>
+    </div>
+
+    <div class="second">
+        <h2>DETAILS</h2>
+        <div class="intro">
+            <img src="C:\Users\Mayer\OneDrive\Desktop\imagematerial\ideathon_long.jpeg-min.jpg" alt="">
+            <div class="writtenintro">
+                <h3>ABOUT THE EVENT</h3>
+                <div class="content">
+                    <p>
+                    <pre>
+A spark which results in fire, a stream leading to a river
+ and diamonds found in the rough. Everything big starts with
+  something small. It takes an enormous amount of courage 
+  and and effort to take the road not taken and extreme passion 
+  to reach the other side.
+Do you have an idea that would change how things are done 
+today? That makes you a dreamer and an inventor. Do you find 
+yourself thinking and working on your idea in the oddest of 
+times? That makes you a conqueror. Do you have what it takes 
+to change the world? That makes you a wizard.
+Is the only thing standing between you and your dream money?
+ Don’t worry, we’ve got you covered. OPTICA presents “IDEATHON”, 
+ an event where you get the opportunity to woo the judges with
+  your ideas and win cash prizes and the really special ones will 
+  also get the chance to be funded.
+                        
+ Time for all the brainstorming to payout!
+You believe in your idea, we believe in your vision!</pre>
+                    </p>
+                </div>
+            </div>
+
+        </div>
+        <div class="rules">
+            <div class="item-container">
+                <a class="item"
+                    href="https://docs.google.com/document/d/11RnMFbzhGNpEHhPMG60rSGFS_g3SDFWUBCH1nMx3gQI/edit#heading=h.wlclr7wtdgt1">
+                    <img src="C:\Users\Mayer\OneDrive\Desktop\imagematerial\rules.jpg" alt="">
+                </a>
+            </div>
+            <div class="item-container">
+                <a class="item" href="https://docs.google.com/forms/d/e/1FAIpQLSdJSbg-tJtA_agX7gJnmjZPCRtK1YWgk1YJsKTEPYIEvslYVw/viewform?usp=send_form">
+                    <img src="C:\Users\Mayer\OneDrive\Desktop\imagematerial\REGISTER.png" alt="">
+                </a>
+            </div>
+            
+            <div class="item-container" id="dateandvenue">
+                <div class="item">
+                    <img src="C:\Users\Mayer\OneDrive\Desktop\imagematerial\datevenue.png" alt="">
+
+                    <span class="datei">
+                        <pre>
+    <i class="fa-solid fa-calendar"></i>   16 April 2024  
+    <i class="fa-solid fa-location-dot"></i> LT-4
+    <i class="fa-solid fa-clock"></i>  1:00 -3:30PM     
+    Reg-Deadline
+    15 April 2024 , 12 AM 
+                    </pre>
+                    </span>
+                </div>
+            </div>
+        </div>
+        
+        <h2>ORGANISING TEAM</h2>
+        <br><br><br><br><br><br>
+        <div class='author'>
+
+        </div>
+        <div class="container">
+            <div class='cover'>
+                <figure class='front'>
+                    <img src='C:\Users\Mayer\OneDrive\Desktop\imagematerial\teamfront.jpg' />
+                </figure>
+                <figure class='back'>
+                    <img src='C:\Users\Mayer\OneDrive\Desktop\imagematerial\team back.jpg' />
+                </figure>
+            </div>
+        </div>
+        <br>
+        
+        <div class="faqs">
+            <h3>DO YOU HAVE ANY QUERIES FOR THE EVENT , <BR> IF YES CLICK THIS</h3>
+                <a href="events.html">
+                    <button >
+                        ASK ME <i class="fa-solid fa-question"></i>
+                    </button>
+                </a>
+        </div>
+
+    </div>
+
+</body>
+<style>
+    pre{
+        font-size: 19px;
+    }
+    .faqs button{
+        color:#06862d;
+        width:165px;
+        height:89px;
+        border-radius: 15px;
+        font-size: 35px;
+        margin-left: 40%;
+    }
+    .faqs button:hover{
+        color:#050303;
+        transform: translate(15px,-15px);
+        background-color: #c22424;
+        
+    }
+    .faqs{
+        padding-top: 0;
+    }
+
+    .cover img {
+        transform: translate(2px, 2px);
+    }
+
+    .container {
+        width: 230px;
+        height: 350px;
+        background: url("C:/Users/Mayer/OneDrive/Desktop/imagematerial/teammkiphoto.jpg");
+        background-size: 212px 350px;
+        background-repeat: no-repeat;
+        box-shadow: 0 0 10px 5px rgba(241, 247, 241, 0.7), inset 0 0 10px 5px rgba(0, 0, 0, 0.5);
+        /* Glowy shadow border */
+        backgorund-position: 30px 30px;
+        position: relative;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        perspective: 1000px;
+        background-color: #000000;
+    }
+
+    .cover {
+        width: 225px;
+        height: 100%;
+        position: absolute;
+
+        transform: rotateY(0deg);
+        transform-style: preserve-3d;
+        transform-origin: left;
+        transition: all .3s ease-in;
+    }
+
+    .container:hover .cover {
+        transform: rotateY(-180deg);
+    }
+
+    figure {
+        margin: 0;
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    figure.front {
+        background-color: green;
+    }
+
+    figure.back {
+        background-color: green;
+        transform: rotateY(180deg)
+    }
+
+    .author {
+        width: 250px;
+        height: 50px;
+        position: relative;
+        left: 50%;
+        top: 30%;
+        transform: translate(-50%, -90%);
+        font-size: 120%;
+
+    }
+
+
+    @media only screen and(max-height:1000px) {
+        .author {
+            padding: 10px;
+            font-size: 80%;
+        }
+    }
+
+    @media only screen and(max-height:600px) {
+        .author {
+            padding: 20px;
+            font-size: 60%;
+        }
+    }
+
+
+   
+</style>
+
+</html>
