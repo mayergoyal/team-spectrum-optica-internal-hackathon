@@ -101,12 +101,99 @@
                         </button>
                     </div>
                 </div>
+                <div class="button" style="margin-left:196px;margin-top: 560px;">
+                    <a download href="C:\xampp\htdocs\xampp\team-spectrum-optica-internal-hackathon\day2.png" >
+                        <button>
+                            DOWNLOAD ME
+                        </button>
+                    </a>
+
+                </div>
             </div>
         </div>
     </div>
 
 </body>
 <style>
+     @import "color-schemer";
+@import "compass";
+@import "breakpoint";
+@import "susy";
+    .button{
+        position: absolute;
+  
+  transform: translateX(-50%) translateY(-50%);
+  
+  background: red;
+  width: 100px;
+  padding: 20px 30px;
+
+  border: 5px solid white;
+  color: red;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align:center;
+  filter: drop-shadow(0 0 60px red);
+  
+  z-index: 2;
+  @include transition(all .15s .15s ease-out);
+
+    &:after,
+    &:before {
+        position: absolute;
+        width: 100%;
+        max-width: 100%;
+        top: 100%;
+        left: 0;
+        bottom: -10px;
+        content: '';
+        z-index: 1;
+        @include transition(all .15s .15s ease-out);
+    }
+
+    &:before {
+        background: white;
+        top: 10px;
+        left: -15px;
+        height: 100%;
+        width: 15px;
+    }
+
+    &:after {
+        width:100%;
+        background: white;
+        right: 0px;
+        left: -15px;
+        height: 15px;
+    }
+
+    &:hover {
+      background: red;
+      color: #fff;
+      margin-left: -7.5px;
+      margin-bottom: -7.5px;
+
+      &:after,
+      &:before {
+          top: 100%;
+          left: 0;
+          bottom: 0px;
+      }
+
+      &:before {
+          top: 0px;
+          left: 0px;
+          width: 0px;
+      }
+
+      &:after {
+          right: 0px;
+          left: 0px;
+          height: 0px;
+      }
+
+    }
+    }
     .content-wrapper {
         position: relative;
 
@@ -170,7 +257,7 @@ body{
     }
 
     .event h1 {
-        font-size: 2rem;
+        font-size: 3rem;
     }
 
     .description {
