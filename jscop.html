@@ -192,6 +192,196 @@
         .eventinfo img:hover {
             transform: translate(0, -40px);
         }
+
+        /* SOCIAL MEDIA */
+
+        .media-container{
+            height: 25vh;
+            background: linear-gradient(#10151c,#030405);
+            color: rgb(222, 222, 222);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            font-family: 'Poppins', sans-serif;
+        }
+        .media-heading h2{
+            font-size: 34px;
+            margin: 10px 0 21px 0;
+        }
+        .media-link-list{
+            display: flex;
+            list-style: none;
+            margin:0;
+            padding:0;
+        }
+        .media-link-list li{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            list-style: none;
+        }
+        .media-link-list li a{
+            text-decoration: none;
+            position: relative;
+            width:60px;
+            height:60px;
+            display:block;
+            text-align:center;
+            margin:0 10px;
+            border-radius: 50%;
+            padding: 6px;
+            box-sizing: border-box;
+            text-decoration:none;
+            box-shadow: 0 5px 9px rgba(143, 143, 143, 0.3);
+            background: linear-gradient(0deg, #b9b9b9, #fff);
+            transition: .5s;
+        }
+        .media-link-list li a i{
+            width: 100%;
+            height:100%;
+            display:block;
+            background: linear-gradient(0deg, #fff, #b9b9b9);
+            border-radius: 50%;
+            line-height: calc(60px - 12px);
+            font-size: 26px;
+            color: black;
+            transition: .5s;
+        }
+        .media-link-list li:nth-child(1) a:hover i{
+            color: #316FF6;
+        }
+        .media-link-list li:nth-child(2) a:hover i{
+            background: linear-gradient(45deg, #f9ce34, #ee2a7b, #6228d7); 
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+        .media-link-list li:nth-child(3) a:hover i{
+            color: #0077B5;
+        }
+        .media-link-list li:nth-child(4) a:hover i{
+            color: rgb(255, 77, 0);
+        }
+        .media-link-list li:nth-child(5) a:hover i{
+            color: rgb(69, 69, 69);
+        }
+        .media-link-list li:nth-child(6) a:hover i{
+            color: #562d92;
+        }
+        @media only screen and (max-width: 500px) {
+            .media-heading h2{
+                font-size: 28px;
+                margin: 7px 0 17px 0;
+            }
+            .media-link-list li a{
+                width: 40px;
+                height: 40px;
+            }
+            .media-link-list li a i{
+                line-height: 28px;
+                font-size: 22px;
+            }
+        }
+        @media only screen and (max-width: 380px) {
+            .media-heading h2{
+                font-size: 22px;
+            }
+            .media-link-list li a{
+                width: 28px;
+                height: 28px;  
+            }
+            .media-link-list li a i{
+                font-size: 16px;
+                line-height: 16px;
+            }
+        }
+
+        /* SOCIAL MEDIA ENDS */
+
+        /* SPONSORS */
+
+        .outer-media{
+            height: 45vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: radial-gradient(ellipse at bottom, #1c2530 0%, #030405 100%);
+        }
+
+        .sponsor-slider {
+            position: relative;
+            width: 275px;
+        }
+
+        .slider-content {
+            display: flex;
+            flex-direction: column; 
+        }
+
+        .slider-item {
+            width: 100%;
+            height: 9vh;
+            padding: 10px;
+            opacity: 0;
+            border-radius: 20px;
+            background-color: rgba(180, 180, 180, 0.251);
+            pointer-events: none;
+            position: absolute;
+            justify-content: space-between;
+            animation: moving 7.5s linear infinite;
+            animation-delay: calc(1.5s * var(--timer));
+        }
+        .slider-item img{
+            width: 100%;
+            height: 100%;
+        }
+        .sponsor-slider:hover .slider-item {
+            animation-play-state: paused;
+        }
+
+        .slider-item:last-child {
+            animation-delay: calc(-1.5s * var(--timer));
+        }
+
+        @keyframes moving {
+            0% {
+                opacity: 0;
+                transform: translateY(100%) scale(0.5);
+            }
+            5%, 20% {
+                opacity: 0.5;
+                transform: translateY(100%) scale(0.7);
+            }
+            25%, 40% {
+                opacity: 1;
+                pointer-events: auto;
+                transform: translateY(0%) scale(1.1);
+            }
+            45%, 60% {
+                opacity: 0.5;
+                transform: translateY(-100%) scale(0.7);
+            }
+            65%, 100% {
+                opacity: 0;
+                transform: translateY(-100%) scale(0.5);
+            }
+        }
+
+        /* Media Queries */
+        @media screen and (max-width: 600px) {
+            .sponsor-slider {
+                max-width: 100%;
+            }
+        }
+
+        @media screen and (max-width: 400px) {
+            .slider-item {
+                padding: 5px;
+            }
+        }
+
+        /* SPONSORS END */
     </style>
 </head>
 
@@ -227,7 +417,7 @@
                         <a class="nav-link" href="#spons">Sponsorships</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#speaks">Speakergs</a>
+                        <a class="nav-link" href="#speaks">Speakers</a>
                     </li>
             </div>
 
@@ -240,7 +430,7 @@
 
         <div class="mainbg">
             <video autoplay muted loop>
-                <source src="C:\xampp\htdocs\xampp\team-spectrum-optica-internal-hackathon\143673 (Original).mp4" ; type="video/mp4">
+                <source src="143673 (Original).mp4" ; type="video/mp4">
             </video>
         </div>
         <div class="twomain">
@@ -537,12 +727,55 @@
         </div>
         <div class="sponsorship" id="spons">
             <h1>SPONSORSHIP</h1>
+
+            <div class="outer-media">
+                <div class="sponsor-slider">
+        
+                    <div class="slider-content">
+            
+                        <div class="slider-item" style="--timer:-1;">
+                            <img src="sponsor1.png" alt="">
+                        </div>
+            
+                        <div class="slider-item" style="--timer:0;">
+                            <img src="sponsor2.png" alt="">
+                        </div>
+            
+                        <div class="slider-item" style="--timer:1;">
+                            <img src="sponsor3.png" alt="">
+                        </div>
+            
+                        <div class="slider-item" style="--timer:2;">
+                            <img src="sponsor4.png" alt="">
+                        </div>
+        
+                        <div class="slider-item" style="--timer:2;">
+                            <img src="sponsor5.png" alt="">
+                        </div>
+            
+                    </div>
+            
+                </div>
+            </div>
         </div>
 
-
-
-
-
+        <div class="media-container">
+            <div class="media-heading">
+                <h2>Connect with us</h2>
+            </div>
+            <div class="mediabox">
+                <ul class="media-link-list">
+                    <li><a href="https://www.facebook.com/jiitopticachapter/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a></li>
+                    <li><a href="https://www.instagram.com/jiitopticachapter/" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
+                    <li><a href="https://www.linkedin.com/company/jiitopticachapter" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                    <li><a href="%20jiitopticachapter@gmail.com" target="_blank"><i class="fa-regular fa-envelope"></i></a></li>
+                    <li><a href="https://twitter.com/jiitoptica" target="_blank">
+                        <i class="fa-brands fa-x-twitter"></i>
+                    </a></li>
+                    <li><a href="https://github.com/jiitopticachapter" target="_blank"><i class="fa-brands fa-github"></i></a></li>
+                </ul>
+            </div>
+        </div>
     </div>
 
 </body>
@@ -726,12 +959,6 @@
         /* Glowy shadow border */
         transition: box-shadow 0.3s;
     }
-
-
-
-
-
-
     .secondsection {
         margin: 0;
 
