@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>code of duty</title>
+    <title>ccc</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         body {
@@ -60,6 +60,7 @@
         .intro {
             display: flex;
             justify-content: space-between;
+            flex-wrap: wrap;
 
         }
 
@@ -263,6 +264,71 @@
         .item:hover .datei {
             opacity: 1;
         }
+        @media (max-width:485px){
+            .herotext{
+                font-size: 5em;
+            }
+        }
+        @media (max-width:280px){
+            .herotext{
+                font-size: 3em;
+            }
+            .intro img{
+                height: 150px;
+                width:150px;
+                margin-left: 0;
+            }
+        }
+        @media (max-width:1285px){
+            .intro img{
+                margin-left: 35vw;
+            }
+            .content{
+                margin-left: 35vw;
+            }
+        }
+        @media (max-width:750px)
+        {
+            .intro img{
+                height: 250px;
+                width:250px;
+                margin-left: 0;
+            }
+            .content{
+                margin-left: 0;
+            }
+        }
+        @media (max-width:500px){
+            .content p{
+                font-size: 13px;
+                font-family: 'Courier New', Courier, monospace;
+            }
+        }
+        @media (max-width:400px){
+            .item-container{
+                border-radius: 100%;
+            overflow: hidden;
+            filter: drop-shadow(0 0 5px white);
+            margin: 16px;
+            width: 100px;
+            height: 60px;
+            }
+            .item-container img{
+                width: 100px;
+            height: 60px;
+            }
+            .datei{
+                width: 100px;
+            height: 60px;
+            font-size: 6px;
+            }
+        }
+        @media (max-width:300px){
+            .firstitem{
+                margin-top: 50px;
+            }
+
+        }
     </style>
 </head>
 
@@ -281,20 +347,20 @@
                 <h3>ABOUT THE EVENT</h3>
                 <div class="content">
                     <p>
-                    <pre>
-which will be a perfect opportunity for someone
-Join us for an exciting circuit building event
-wants to gain a fundamental understanding of 
-circuit building.
-The students in OPTICA will guide you through 
-the process of building your own circuits and
-resolve any queries you might have.
-Put on your smart glasses and get ready to hone 
-your skills, expand your knowledge and connect 
-with other like-minded individuals in the field
- of electronics and communication engineering!
- Don't miss out on this opportunity and REGISTER
- NOW to secure your spot!</pre>
+                    
+which will be a perfect opportunity for someone <br>
+Join us for an exciting circuit building event<br>
+wants to gain a fundamental understanding of <br>
+circuit building.<br>
+The students in OPTICA will guide you through <br>
+the process of building your own circuits and<br>
+resolve any queries you might have.<br>
+Put on your smart glasses and get ready to hone <br>
+your skills, expand your knowledge and connect <br>
+with other like-minded individuals in the field<br>
+ of electronics and communication engineering!<br>
+ Don't miss out on this opportunity and REGISTER<br>
+ NOW to secure your spot!<br>
                     </p>
                 </div>
             </div>
@@ -361,7 +427,7 @@ with other like-minded individuals in the field
 
 </body>
 <style>
-    .content pre{
+    .content {
         font-size: 25px;
     }
     .faqs button{

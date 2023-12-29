@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>code of duty</title>
+    <title>ideathon</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         body {
@@ -60,7 +60,7 @@
         .intro {
             display: flex;
             justify-content: space-between;
-
+flex-wrap: wrap;
         }
 
         .writtenintro {
@@ -263,6 +263,71 @@
         .item:hover .datei {
             opacity: 1;
         }
+        @media (max-width:650px){
+            .herotext{
+                font-size: 5em;
+            }
+        }
+        @media (max-width:350px){
+            .herotext{
+                font-size: 3em;
+            }
+            .intro img{
+                height: 150px;
+                width:150px;
+                margin-left: 0;
+            }
+        }
+        @media (max-width:1285px){
+            .intro img{
+                margin-left: 35vw;
+            }
+            .content{
+                margin-left: 35vw;
+            }
+        }
+        @media (max-width:750px)
+        {
+            .intro img{
+                height: 250px;
+                width:250px;
+                margin-left: 0;
+            }
+            .content{
+                margin-left: 0;
+            }
+        }
+        @media (max-width:500px){
+            .content p{
+                font-size: 13px;
+                font-family: 'Courier New', Courier, monospace;
+            }
+        }
+        @media (max-width:400px){
+            .item-container{
+                border-radius: 100%;
+            overflow: hidden;
+            filter: drop-shadow(0 0 5px white);
+            margin: 16px;
+            width: 100px;
+            height: 60px;
+            }
+            .item-container img{
+                width: 100px;
+            height: 60px;
+            }
+            .datei{
+                width: 100px;
+            height: 60px;
+            font-size: 6px;
+            }
+        }
+        @media (max-width:320px){
+            .firstitem{
+                margin-top: 150px;
+            }
+
+        }
     </style>
 </head>
 
@@ -281,32 +346,26 @@
                 <h3>ABOUT THE EVENT</h3>
                 <div class="content">
                     <p>
-                    <pre>
-A spark which results in fire, a stream leading to a river
- and diamonds found in the rough. Everything big starts with
-  something small. It takes an enormous amount of courage 
-  and and effort to take the road not taken and extreme passion 
-  to reach the other side.
+                    <br>
+A spark which results in fire, a stream leading to a river<br>
+ and diamonds found in the rough. Everything big starts with<br>
+  something small. It takes an enormous amount of courage <br>
+  and and effort to take the road not taken and extreme passion <br>
+  to reach the other side.<br>
 Do you have an idea that would change how things are done 
-today? That makes you a dreamer and an inventor. Do you find 
-yourself thinking and working on your idea in the oddest of 
-times? That makes you a conqueror. Do you have what it takes 
-to change the world? That makes you a wizard.
-Is the only thing standing between you and your dream money?
- Don’t worry, we’ve got you covered. OPTICA presents “IDEATHON”, 
- an event where you get the opportunity to woo the judges with
-  your ideas and win cash prizes and the really special ones will 
-  also get the chance to be funded.
-                        
- Time for all the brainstorming to payout!
-You believe in your idea, we believe in your vision!</pre>
+today? That makes you a dreamer and an inventor. Do you find <br>
+yourself thinking and working on your idea in the oddest of <br>
+times? That makes you a conqueror. Do you have what it takes <br>
+to change the world? That makes you a wizard.    <br>
+ Time for all the brainstorming to payout!<br>
+You believe in your idea, we believe in your vision!<br>
                     </p>
                 </div>
             </div>
 
         </div>
         <div class="rules">
-            <div class="item-container">
+            <div class="item-container firstitem">
                 <a class="item"
                     href="https://docs.google.com/document/d/11RnMFbzhGNpEHhPMG60rSGFS_g3SDFWUBCH1nMx3gQI/edit#heading=h.wlclr7wtdgt1">
                     <img src="rules.jpg" alt="">

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>code of duty</title>
+    <title>Blind coding</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         body {
@@ -60,6 +60,7 @@
         .intro {
             display: flex;
             justify-content: space-between;
+            flex-wrap: wrap;
 
         }
 
@@ -155,7 +156,7 @@
         }
 
         .content {
-            font-size: 14px;
+            font-size: 20px;
             font-family: Arial, Helvetica, sans-serif;
             font-weight: bold;
             color: rgb(219, 217, 217);
@@ -263,6 +264,71 @@
         .item:hover .datei {
             opacity: 1;
         }
+        @media (max-width:485px){
+            .herotext{
+                font-size: 5em;
+            }
+        }
+        @media (max-width:280px){
+            .herotext{
+                font-size: 3em;
+            }
+            .intro img{
+                height: 150px;
+                width:150px;
+                margin-left: 0;
+            }
+        }
+        @media (max-width:1285px){
+            .intro img{
+                margin-left: 35vw;
+            }
+            .content{
+                margin-left: 35vw;
+            }
+        }
+        @media (max-width:750px)
+        {
+            .intro img{
+                height: 250px;
+                width:250px;
+                margin-left: 0;
+            }
+            .content{
+                margin-left: 0;
+            }
+        }
+        @media (max-width:500px){
+            .content p{
+                font-size: 13px;
+                font-family: 'Courier New', Courier, monospace;
+            }
+        }
+        @media (max-width:400px){
+            .item-container{
+                border-radius: 100%;
+            overflow: hidden;
+            filter: drop-shadow(0 0 5px white);
+            margin: 16px;
+            width: 100px;
+            height: 60px;
+            }
+            .item-container img{
+                width: 100px;
+            height: 60px;
+            }
+            .datei{
+                width: 100px;
+            height: 60px;
+            font-size: 6px;
+            }
+        }
+        @media (max-width:300px){
+            .firstitem{
+                margin-top: 50px;
+            }
+
+        }
     </style>
 </head>
 
@@ -280,28 +346,28 @@
             <div class="writtenintro">
                 <h3>ABOUT THE EVENT</h3>
                 <div class="content">
-                    <p>
-                    <pre>
-                        "Talk is cheap. Show me your code!"
-                        Attention all the budding coders!
-                        Aren't you all bored of the monotonous coding routines
-                         and wanna exolore something fun?
-                        Here's your chance as JSCOP 5.0 presents you the Blind 
-                        Coding Competition in which you have to type the code
-                         with your monitors off.
-                        Doesn't this sound exciting?Yes it is!
-                        So what are you waiting for?
-                        Fill the registration form and join us in this crazy 
-                        fun-filled event and maximize your chances of winning 
-                        exciting prizes and goodies worth 25k+.
-                        Further details will be revealed soon so just gear up!</pre>
+                    <p >
+                    <br>
+                        "Talk is cheap. Show me your code!"<br>
+                        Attention all the budding coders!<br>
+                        Aren't you all bored of the monotonous coding routines<br>
+                         and wanna exolore something fun?<br>
+                        Here's your chance as JSCOP 5.0 presents you the Blind <br>
+                        Coding Competition in which you have to type the code<br>
+                         with your monitors off.<br>
+                        Doesn't this sound exciting?Yes it is!<br>
+                        So what are you waiting for?<br>
+                        Fill the registration form and join us in this crazy <br>
+                        fun-filled event and maximize your chances of winning <br>
+                        exciting prizes and goodies worth 25k+.<br>
+                        Further details will be revealed soon so just gear up!<br>
                     </p>
                 </div>
             </div>
 
         </div>
         <div class="rules">
-            <div class="item-container">
+            <div class="item-container firstitem">
                 <a class="item"
                     href="https://docs.google.com/document/d/1gT87Tn-DF7Q76PyWmiU0CoGCfOFZD_6ETpiYsD9K1Lw/edit?usp=sharing">
                     <img src="rules.jpg" alt="">
