@@ -8,7 +8,8 @@
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap-theme.min.css">
@@ -22,7 +23,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Poppins&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Quicksand&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Quicksand&display=swap"
+        rel="stylesheet">
     <style>
         body {
             margin: 0;
@@ -36,29 +38,33 @@
             overflow-y: auto;
             overflow-x: hidden;
         }
-        
-        .navbar a:hover{
+
+        .navbar a:hover {
             border-bottom: 2px solid white;
             color: lightblue;
-            .navbar{
+
+            .navbar {
                 padding-bottom: 0;
                 margin-bottom: 0;
             }
         }
+
         .navbar-light .navbar-nav .nav-link:hover {
             color: lightblue;
             border-bottom: 2px solid white;
         }
+
         .navbar-nav {
-            margin:  auto;
+            margin: auto;
             display: flex;
             justify-content: center;
         }
-        .navbar-brand img{
+
+        .navbar-brand img {
             height: 30px;
         }
 
-        .navbar{
+        .navbar {
             background-color: #00000039;
             font-size: 18px;
             /* display: flex;
@@ -79,7 +85,7 @@
         .navbar-light .navbar-nav .nav-item.dropdown .dropdown-menu .dropdown-item {
             color: white;
         }
-    
+
         .maincontainer {
             position: relative;
             width: 100%;
@@ -92,7 +98,7 @@
             position: relative;
         }
 
-        .main-text{
+        .main-text {
             font-family: 'Cinzel', serif;
         }
 
@@ -169,7 +175,7 @@
 
         .twomain {
             display: block;
-            
+
         }
 
         .secondsection {
@@ -183,56 +189,59 @@
             @return $random_range;
         }
 
-        .eventinfo img:hover{
-            transform: translate(0,-40px);
+        .eventinfo img:hover {
+            transform: translate(0, -40px);
         }
     </style>
 </head>
 
 <body>
-        <nav class="navbar navbar-expand-lg navbar-light">
+    <nav class="navbar navbar-expand-lg navbar-light">
 
-            <div class="container-fluid">
+        <div class="container-fluid">
             <!-- logo -->
-              <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="#">
                 <img src="jscoplogo.jpg" alt="JSCOP">
-              </a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
-              </button>
-              
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#main">Home</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#events">Events</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#time">Timeline</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#photo">Gallery</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#spons">Sponsorships</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#speaks">Speakergs</a>
-                  </li>
-              </div>
+            </button>
 
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#main">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#events">Events</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#time">Timeline</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#photo">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#spons">Sponsorships</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#speaks">Speakergs</a>
+                    </li>
             </div>
 
-          </nav>
+        </div>
+
+    </nav>
 
 
     <div class="maincontainer" id="main">
 
         <div class="mainbg">
             <video autoplay muted loop>
-                <source src="C:\xampp\htdocs\xampp\team-spectrum-optica-internal-hackathon\143673 (Original).mp4" ; type="video/mp4">
+                <source src="C:\xampp\htdocs\xampp\team-spectrum-optica-internal-hackathon\143673 (Original).mp4" ;
+                    type="video/mp4">
             </video>
         </div>
         <div class="twomain">
@@ -407,246 +416,235 @@
         <div class="timeline" id="time">
             <h1>TIMELINE</h1>
             <div class="day1">
-               <a href="C:\xampp\htdocs\xampp\team-spectrum-optica-internal-hackathon\day1.html">
-                <button>
-                    <span style="font-size: 35px;">DAY-1 SCHEDULE </span> <br><span style="font-size: 23px;">for pc view</span>
-                </button>
-               </a>
-               <a href="">
-                <button>
-                    <span style="font-size: 35px;">DAY-1 SCHEDULE </span> <br><span style="font-size: 23px;">for other view</span>
-                </button>
-               </a>
+                <a href="C:\xampp\htdocs\xampp\team-spectrum-optica-internal-hackathon\day1.html">
+                    <button>
+                        <span style="font-size: 35px;">DAY-1 SCHEDULE </span> <br><span style="font-size: 23px;">for pc
+                            view</span>
+                    </button>
+                </a>
+                <a href="">
+                    <button>
+                        <span style="font-size: 35px;">DAY-1 SCHEDULE </span> <br><span style="font-size: 23px;">for
+                            other view</span>
+                    </button>
+                </a>
 
             </div>
             <div class="day2">
                 <a href="C:\xampp\htdocs\xampp\team-spectrum-optica-internal-hackathon\day2.html">
-                 <button>
-                     <span style="font-size: 35px;">DAY-2 SCHEDULE </span> <br><span style="font-size: 23px;">for pc view</span>
-                 </button>
+                    <button>
+                        <span style="font-size: 35px;">DAY-2 SCHEDULE </span> <br><span style="font-size: 23px;">for pc
+                            view</span>
+                    </button>
                 </a>
                 <a href="">
-                 <button>
-                     <span style="font-size: 35px;">DAY-2 SCHEDULE </span> <br><span style="font-size: 23px;">for other view</span>
-                 </button>
+                    <button>
+                        <span style="font-size: 35px;">DAY-2 SCHEDULE </span> <br><span style="font-size: 23px;">for
+                            other view</span>
+                    </button>
                 </a>
- 
-             </div>
 
-        </div>
-        <div class="gallery" id="photo">
-          <h1>GALLERY</h1>
-          <setion class="gallery">
-            <div class="gallery__inner container">
-              <div class="gallery__item">
-                <h3 class="gallery__title">#</h3>
-              </div>
-              <div class="gallery__item">
-                <h3 class="gallery__title">#Winners</h3>
-              </div>
-              <div class="gallery__item --active">
-                <h3 class="gallery__title">#Audience</h3>
-              </div>
-              <div class="gallery__item">
-                <h3 class="gallery__title">#Awards</h3>
-              </div>
-              <div class="gallery__item">
-                <h3 class="gallery__title">#Smiles</h3>
-              </div>
-              <div class="gallery__item">
-                <h3 class="gallery__title">#</h3>
-              </div>
-              <div class="gallery__item">
-                <h3 class="gallery__title">#Team</h3>
-              </div>
-              <div class="gallery__item">
-                <h3 class="gallery__title">#</h3>
-              </div>
             </div>
-          </setion>
-          <script>
-            if (document.querySelector(".gallery__item")) {
-  const container = document.querySelector(".container");
-  const galleryItem = document.querySelectorAll(".gallery__item");
+<br><br>
+        </div>
+        <div class="gall" id="photo">
+            <h1>GALLERY</h1>
+            <setion class="gallery">
+                <div class="gallery__inner container">
+                    <div class="gallery__item">
+                        <h3 class="gallery__title">#</h3>
+                    </div>
+                    <div class="gallery__item">
+                        <h3 class="gallery__title">#Winners</h3>
+                    </div>
+                    <div class="gallery__item --active">
+                        <h3 class="gallery__title">#Audience</h3>
+                    </div>
+                    <div class="gallery__item">
+                        <h3 class="gallery__title">#Awards</h3>
+                    </div>
+                    <div class="gallery__item">
+                        <h3 class="gallery__title">#Smiles</h3>
+                    </div>
+                    <div class="gallery__item">
+                        <h3 class="gallery__title">#</h3>
+                    </div>
+                    <div class="gallery__item">
+                        <h3 class="gallery__title">#Team</h3>
+                    </div>
+                    <div class="gallery__item">
+                        <h3 class="gallery__title">#</h3>
+                    </div>
+                </div>
+            </setion>
+            <script>
+                if (document.querySelector(".gallery__item")) {
+                    const container = document.querySelector(".container");
+                    const galleryItem = document.querySelectorAll(".gallery__item");
 
-  const cleaner = () => {
-    galleryItem.forEach((gallery) => {
-      gallery.classList.remove("--active");
-    });
-  };
+                    const cleaner = () => {
+                        galleryItem.forEach(gallery => {
+                            gallery.classList.remove("--active");
+                        });
+                    };
 
-  const changePhoto = (index) => {
-    cleaner();
-    galleryItem[index].classList.add("--active");
+                    const changePhoto = index => {
+                        cleaner();
+                        galleryItem[index].classList.add("--active");
 
-    // Add color changes based on index if needed
-    switch (index) {
-      case 0:
-        container.style.backgroundColor = "#95120e4d";
-        break;
-      case 1:
-        container.style.backgroundColor = "#D3D3D3";
-        break;
-      case 2:
-        container.style.backgroundColor = "#1f9ec14d";
-        break;
-      case 3:
-        container.style.backgroundColor = "#996515";
-        break;
-      case 4:
-        container.style.backgroundColor = "#808080";
-        break;
-      case 5:
-        container.style.backgroundColor = "#df91484d";
-        break;
-      case 6:
-        container.style.backgroundColor = "#26B170";
-        break;
-      case 7:
-        container.style.backgroundColor = "#000000";
-        break;
-      // Add more cases as needed
-    }
-  };
+                        // Add color changes based on index if needed
+                        switch (index) {
+                            case 0:
+                                container.style.backgroundColor = "#95120e4d";
+                                break;
+                            case 1:
+                                container.style.backgroundColor = "#D3D3D3";
+                                break;
+                            case 2:
+                                container.style.backgroundColor = "#1f9ec14d";
+                                break;
+                            case 3:
+                                container.style.backgroundColor = "#996515";
+                                break;
+                            case 4:
+                                container.style.backgroundColor = "#808080";
+                                break;
+                            case 5:
+                                container.style.backgroundColor = "#df91484d";
+                                break;
+                            case 6:
+                                container.style.backgroundColor = "#26B170";
+                                break;
+                            case 7:
+                                container.style.backgroundColor = "#000000";
+                                break;
+                            // Add more cases as needed
+                        }
+                    };
 
-  let currentIndex = 0;
+                    let currentIndex = 0;
 
-  // Function to rotate to the next photo
-  const rotatePhotos = () => {
-    currentIndex = (currentIndex + 1) % galleryItem.length;
-    changePhoto(currentIndex);
-  };
+                    // Function to rotate to the next photo
+                    const rotatePhotos = () => {
+                        currentIndex = (currentIndex + 1) % galleryItem.length;
+                        changePhoto(currentIndex);
+                    };
 
-  // Set up the interval for automatic rotation (change every 5 seconds in this example)
-  const rotationInterval = 5000; // Adjust as needed
-  setInterval(rotatePhotos, rotationInterval);
+                    // Set up the interval for automatic rotation (change every 5 seconds in this example)
+                    const rotationInterval = 5000; // Adjust as needed
+                    setInterval(rotatePhotos, rotationInterval);
 
-  // Initial setup to show the first photo
-  changePhoto(currentIndex);
-}
-          </script>
+                    // Initial setup to show the first photo
+                    changePhoto(currentIndex);
+                }
+            </script>
         </div>
         <div class="sponsorship" id="spons">
             <h1>SPONSORSHIP</h1>
         </div>
 
 
-        
+
 
 
     </div>
 
 </body>
 <style>
+    @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@700&display=swap");
 
-@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@700&display=swap");
+    .gallery{
+        margin-left: 0;
+        margin-right: 0;
+    }
 
+    .container {
+        display: flex;
+        width: 100%;
+        padding: 0 20px;
+        transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
 
+    .gallery__inner {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        overflow: hidden;
+    }
 
-.container {
-	display: flex;
-	width: 100%;
-	padding: 0 20px;
+    .gallery__item {
+        position: relative;
+        display: flex;
+        flex: 1;
+        height: 80vh;
+        color: #fff;
+        border-radius: 20px;
+        overflow: hidden;
+        filter: grayscale(1);
+        transition: 0.8s ease-in-out;
+        cursor: pointer;
+    }
 
-	transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-}
+    .gallery__item.--active {
+        flex: 10;
+        filter: grayscale(0);
+    }
 
-.gallery {
-	&__inner {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		height: 100vh;
-		overflow: hidden;
-	}
+    .gallery__item.--active>.gallery__title {
+        left: 20px;
+        opacity: 1;
+        background: rgba(27, 28, 34, 0.2);
+        transition: 0.5s ease-in 0.5s;
+    }
 
-	&__item {
-		position: relative;
+    .gallery__item:not(:last-child) {
+        margin-right: 20px;
+    }
 
-		display: flex;
-		flex: 1;
-		height: 80vh;
+    .gallery__item:nth-child(1) {
+        background: center/cover no-repeat url("https://jscop.jiitopticachapter.in/images/Gallery/1.jpg");
+    }
 
-		color: #fff;
+    .gallery__item:nth-child(2) {
+        background: center/cover no-repeat url("https://jscop.jiitopticachapter.in/images/Gallery/2.jpg");
+    }
 
-		border-radius: 20px;
-		overflow: hidden;
+    .gallery__item:nth-child(3) {
+        background: center/cover no-repeat url("https://jscop.jiitopticachapter.in/images/Gallery/3.jpg");
+    }
 
-		filter: grayscale(1);
+    .gallery__item:nth-child(4) {
+        background: center/cover no-repeat url("https://jscop.jiitopticachapter.in/images/Gallery/4.jpg");
+    }
 
-		transition: 0.8s ease-in-out;
+    .gallery__item:nth-child(5) {
+        background: center/cover no-repeat url("https://jscop.jiitopticachapter.in/images/Gallery/5.jpg");
+    }
 
-		cursor: pointer;
+    .gallery__item:nth-child(6) {
+        background: center/cover no-repeat url("https://jscop.jiitopticachapter.in/images/Gallery/6.jpg");
+    }
 
-		&.--active {
-			flex: 10;
+    .gallery__item:nth-child(7) {
+        background: center/cover no-repeat url("https://jscop.jiitopticachapter.in/images/Gallery/7.jpg");
+    }
 
-			filter: grayscale(0);
+    .gallery__item:nth-child(8) {
+        background: center/cover no-repeat url("https://jscop.jiitopticachapter.in/images/Gallery/8.jpg");
+    }
 
-			& > .gallery__title {
-				left: 20px;
+    .gallery__title {
+        position: absolute;
+        bottom: 20px;
+        left: 5px;
+        padding: 5px 10px;
+        opacity: 0;
+        font-size: 30px;
+        border-radius: 5px;
+    }
 
-				opacity: 1;
-
-				background: hsla(231, 11%, 12%, 0.2);
-
-				transition: 0.5s ease-in 0.5s;
-			}
-		}
-
-		&:not(:last-child) {
-			margin-right: 20px;
-		}
-	}
-
-	&__item:nth-child(1) {
-		background: center / cover no-repeat
-			url("https://jscop.jiitopticachapter.in/images/Gallery/1.jpg");
-	}
-	&__item:nth-child(2) {
-		background: center / cover no-repeat
-			url("https://jscop.jiitopticachapter.in/images/Gallery/2.jpg");
-	}
-	&__item:nth-child(3) {
-		background: center / cover no-repeat
-			url("https://jscop.jiitopticachapter.in/images/Gallery/3.jpg");
-	}
-	&__item:nth-child(4) {
-		background: center / cover no-repeat
-			url("https://jscop.jiitopticachapter.in/images/Gallery/4.jpg");
-	}
-	&__item:nth-child(5) {
-		background: center / cover no-repeat
-			url("https://jscop.jiitopticachapter.in/images/Gallery/5.jpg");
-	}
-	&__item:nth-child(6) {
-		background: center / cover no-repeat
-			url("https://jscop.jiitopticachapter.in/images/Gallery/6.jpg");
-	}
-	&__item:nth-child(7) {
-		background: center / cover no-repeat
-			url("https://jscop.jiitopticachapter.in/images/Gallery/7.jpg");
-	}
-	&__item:nth-child(8) {
-		background: center / cover no-repeat
-			url("https://jscop.jiitopticachapter.in/images/Gallery/8.jpg");
-	}
-	
-
-	&__title {
-		position: absolute;
-		bottom: 20px;
-		left: 5px;
-
-		padding: 5px 10px;
-		opacity: 0;
-
-		font-size: 30px;
-
-		border-radius: 5px;
-	}
-}
-    .timeline button{
+    .timeline button {
         display: inline-block;
         padding: 15px 30px;
         font-size: 16px;
@@ -661,37 +659,38 @@
         box-shadow: 0 0 10px 5px rgba(0, 204, 0, 0.7), inset 0 0 10px 5px rgba(0, 0, 0, 0.5);
         /* Glowy shadow border */
         transition: box-shadow 0.3s;
-       
+
     }
-    
-    .timeline button:hover{
+
+    .timeline button:hover {
         box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5), inset 0 0 10px 5px rgba(0, 204, 0, 0.7);
         /* Glowy shadow border */
         background: linear-gradient(45deg, #000000, #00cc00);
     }
 
-   .day1{
-    display: flex;
-    margin-top: 115px;
-    margin-left: 312px;
-    margin-right: 312px;
-    justify-content: space-between;
-   }
-   .day2{
-    display: flex;
-    margin-top: 55px;
-    margin-left: 312px;
-    margin-right: 312px;
-    justify-content: space-between;
-   }
+    .day1 {
+        display: flex;
+        margin-top: 115px;
+        margin-left: 312px;
+        margin-right: 312px;
+        justify-content: space-between;
+    }
+
+    .day2 {
+        display: flex;
+        margin-top: 55px;
+        margin-left: 312px;
+        margin-right: 312px;
+        justify-content: space-between;
+    }
 
     #movingImage {
-      position: absolute;
-      width: 150px;
-      height: 120px;
+        position: absolute;
+        width: 150px;
+        height: 120px;
     }
-    
-    
+
+
 
     .infoname {
         font-size: 25px;
@@ -713,7 +712,7 @@
 
     .info img {
         width: 400px;
-        
+
         overflow: hidden;
     }
 
@@ -723,8 +722,8 @@
 
     .info {
         opacity: 0;
-        width:400px;
-        height:250px;
+        width: 400px;
+        height: 250px;
         background: rgba(204, 235, 201, 0.8);
         /* Gradient background (green to black) */
         box-shadow: 0 0 10px 5px rgba(78, 241, 92, 0.7), inset 0 0 10px 5px rgba(0, 0, 0, 0.5);
@@ -732,10 +731,10 @@
         transition: box-shadow 0.3s;
     }
 
-    
 
-    
-    
+
+
+
 
     .secondsection {
         margin: 0;
@@ -941,7 +940,7 @@
         justify-content: center;
 
         overflow: hidden;
-       
+
         /* Smoky Border */
         &:before {
             content: "";
@@ -961,26 +960,30 @@
         /* Text Shadow */
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 
-        
-    }
-    .secondsection h1 {
-    animation: heading 3s linear infinite;
-}
 
-@keyframes heading {
-    0% {
-        background: linear-gradient(45deg, #000000, #00cc00);
     }
-    50%{
-        background: linear-gradient(45deg, #00cc00, #000000,#00cc00);
+
+    .secondsection h1 {
+        animation: heading 3s linear infinite;
     }
-    100% {
-        background: linear-gradient(45deg, #00cc00, #000000);
+
+    @keyframes heading {
+        0% {
+            background: linear-gradient(45deg, #000000, #00cc00);
+        }
+
+        50% {
+            background: linear-gradient(45deg, #00cc00, #000000, #00cc00);
+        }
+
+        100% {
+            background: linear-gradient(45deg, #00cc00, #000000);
+        }
     }
-}
-.speakers{
-    background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
-}
+
+    .speakers {
+        background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+    }
 </style>
 
 </html>
