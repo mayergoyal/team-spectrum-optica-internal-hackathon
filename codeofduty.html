@@ -60,6 +60,7 @@
         .intro {
             display: flex;
             justify-content: space-between;
+            flex-wrap: wrap;
 
         }
 
@@ -263,6 +264,49 @@
         .item:hover .datei {
             opacity: 1;
         }
+        @media (max-width:280px){
+            .item-container{
+                border-radius: 100%;
+            overflow: hidden;
+            filter: drop-shadow(0 0 5px white);
+            margin: 16px;
+            width: 100px;
+            height: 60px;
+            }
+            .item-container img{
+                width: 100px;
+            height: 60px;
+            }
+        }
+        @media (max-width:714px){
+            .intro img{
+                width:32vw;
+                height:35vh;
+                margin-left: 50vw;
+            }
+        }
+        @media (max-width:1285px){
+            .intro img{
+                margin-left: 35vw;
+            }
+        }
+        @media (max-width:706px){
+            .rules{
+                justify-content: center;
+            }
+        }
+        @media (max-width:600px){
+            .firstitem{
+                margin-top: 500px;
+            }
+            .domains{
+                justify-content: center;
+            }
+        }
+        .domaincontainer{
+            margin-top: 50px;
+        }
+
     </style>
 </head>
 
@@ -280,35 +324,35 @@
             <div class="writtenintro">
                 <h3>ABOUT THE EVENT</h3>
                 <div class="content">
-                    <p>
-                    <pre>
+                    <p style="font-family: cursive;">
+                    
                     HACKATHON DETAILS:
-
-STEP 1:    Register yourself on Devfolio.
-Fill out your details mentioned. 
-- If you have team ready with you (you can register max upto 4 teammates altogether) 
-- generate your team code on devfolio (will be generated if you create team) 
-- when created team code share it with your teammates and join the team.
+<br><br><br>
+STEP 1:    Register yourself on Devfolio.<br>
+Fill out your details mentioned. <br>
+- If you have team ready with you (you can register max upto 4 teammates altogether) <br>
+- generate your team code on devfolio (will be generated if you create team) <br>
+- when created team code share it with your teammates and join the team.<br><br>
 
 STEP 2:    After registration join the discord server. Joining discord server is mandatory
- as further instructions will be provided on discord only.
+ as further instructions will be provided on discord only.<br><br>
 
 STEP 3:    After joining discord server, please mention which team you belong. If you are 
-alone please mention that as well. Also fill out form pinned in discord channel.
+alone please mention that as well. Also fill out form pinned in discord channel.<br><br>
 
 STEP 4:    Idea submission: Fill out the Idea-submission form pinned in discord server (Team 
 leader should do it). Make a ppt containing your idea and(ppt should contain all the necessary 
 features you will use. Do mention the resources you will use in your project) Ppt also contains 
 certain evaluation points.
-
-You have to pitch the ppt so make sure you make all good and awesome :)</pre>
+<br><br>
+You have to pitch the ppt so make sure you make all good and awesome <br>
                     </p>
                 </div>
             </div>
 
         </div>
         <div class="rules">
-            <div class="item-container">
+            <div class="item-container firstitem">
                 <a class="item"
                     href="https://docs.google.com/document/d/16FQ9ccotl9odfv6eNKsgkIcxLwBdxjdDj2aKFxJ7O0w/edit">
                     <img src="C:\Users\Mayer\OneDrive\Desktop\imagematerial\rules.jpg" alt="">
@@ -343,7 +387,7 @@ You have to pitch the ppt so make sure you make all good and awesome :)</pre>
         <h2>DOMAINS</h2>
         <div class="domains">
 
-            <div class="domaincontainer">
+            <div class="domaincontainer" >
                 <img src="C:\Users\Mayer\OneDrive\Desktop\imagematerial\aiml.jpg" alt="">
                 <button>AI/ML</button>
 
@@ -407,7 +451,8 @@ You have to pitch the ppt so make sure you make all good and awesome :)</pre>
         height:89px;
         border-radius: 15px;
         font-size: 35px;
-        margin-left: 40%;
+        margin-left: 35vw;
+        
     }
     .faqs button:hover{
         color:#050303;
