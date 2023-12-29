@@ -30,7 +30,8 @@
             margin: 0;
             padding: 0;
             height: 100vh;
-            background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+            /*background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);*/
+            background: linear-gradient(45deg, #0d4f0d, #000000);
             overflow: auto;
             font-family: 'Poppins', sans-serif;
             filter: drop-shadow(0 0 10px white);
@@ -229,6 +230,7 @@
             min-height: 100vh;
             background-color: #090a0f;
             font-family: 'Poppins', sans-serif;
+            flex-wrap: wrap;
         }
 
         .user-card {
@@ -236,7 +238,7 @@
             height: 350px; /* Adjusted height */
             overflow: hidden;
             border-radius: 10px;
-            background: linear-gradient(to bottom, #3498db 40%, #ffffff 40%); 
+            background: linear-gradient(to bottom, #00cc00 40%, #ffffff 40%); 
             position: relative;
             margin: 20px;
             transform: perspective(1000px) rotateX(0deg);
@@ -518,6 +520,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#speaks">Speakers</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#teamweb">Team</a>
+                    </li>
             </div>
 
         </div>
@@ -634,7 +639,7 @@
                         </div>
 
                     </div>
-                    <p class="card-text">"Primary aim of quantum artificial intelligence is to improve human
+                    <p class="card-text">  <br> <br> <br> "Primary aim of quantum artificial intelligence is to improve human
                         freedom, dignity, equality, security, and total well-being."
                         <br>
                         Prof. C M Chandrashekhar is here to resolve all your queries and make the topic
@@ -654,7 +659,7 @@
                         </div>
 
                     </div>
-                    <p class="card-text">"We are more than delighted to announce that Dr Gagan Kumar will be joining us
+                    <p class="card-text"> <br> <br> <br>"We are more than delighted to announce that Dr Gagan Kumar will be joining us
                         as our guest speaker at JSCOP 5.0"
                         <br>
                         Enhance your knowledge on the topics of microfabrication and nanotechnology as you attend the
@@ -675,7 +680,7 @@
                         </div>
 
                     </div>
-                    <p class="card-text">Somak Bhattacharyya has received Honours in Physics from Scottish Church
+                    <p class="card-text"> <br> <br> <br> Somak Bhattacharyya has received Honours in Physics from Scottish Church
                         College, Kolkata in 2003. Next to it, he has received both Bachelor of Technology and Master of
                         Technology from Institute of Radiophysics and Electronics in University of Calcutta in 2006 and
                         2008 respectively.
@@ -830,7 +835,7 @@
             </script>
         </div>
         
-        <div class="team">
+        <div class="team" id="teamweb">
             <h1>WEB TEAM</h1>
             <div class="webteam">
 
@@ -1398,7 +1403,7 @@
     }
 
     .speakers {
-        background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+        background: linear-gradient(45deg, #0d4f0d, #000000);
     }
     .card{
         width:400px;
@@ -1485,6 +1490,31 @@
         transform: translate(40px,-250px);
         justify-content: center;
     }
+    }
+    .timeline{
+        overflow: hidden;
+        animation:timeback linear infinite;
+    }
+    @keyframes timeback{
+        0%{
+            background:#00cc00;
+        }
+        25%{
+            background: #030405;
+
+        }
+        50%{
+            background: #00cc00;
+
+
+
+        }
+        75%{
+            background: #030405;
+        }
+        100%{
+            background: #00cc00;
+        }
     }
 </style>
 
