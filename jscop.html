@@ -434,6 +434,95 @@
         </div>
         <div class="gallery" id="photo">
           <h1>GALLERY</h1>
+          <setion class="gallery">
+            <div class="gallery__inner container">
+              <div class="gallery__item">
+                <h3 class="gallery__title">#</h3>
+              </div>
+              <div class="gallery__item">
+                <h3 class="gallery__title">#Winners</h3>
+              </div>
+              <div class="gallery__item --active">
+                <h3 class="gallery__title">#Audience</h3>
+              </div>
+              <div class="gallery__item">
+                <h3 class="gallery__title">#Awards</h3>
+              </div>
+              <div class="gallery__item">
+                <h3 class="gallery__title">#Smiles</h3>
+              </div>
+              <div class="gallery__item">
+                <h3 class="gallery__title">#</h3>
+              </div>
+              <div class="gallery__item">
+                <h3 class="gallery__title">#Team</h3>
+              </div>
+              <div class="gallery__item">
+                <h3 class="gallery__title">#</h3>
+              </div>
+            </div>
+          </setion>
+          <script>
+            if (document.querySelector(".gallery__item")) {
+  const container = document.querySelector(".container");
+  const galleryItem = document.querySelectorAll(".gallery__item");
+
+  const cleaner = () => {
+    galleryItem.forEach((gallery) => {
+      gallery.classList.remove("--active");
+    });
+  };
+
+  const changePhoto = (index) => {
+    cleaner();
+    galleryItem[index].classList.add("--active");
+
+    // Add color changes based on index if needed
+    switch (index) {
+      case 0:
+        container.style.backgroundColor = "#95120e4d";
+        break;
+      case 1:
+        container.style.backgroundColor = "#D3D3D3";
+        break;
+      case 2:
+        container.style.backgroundColor = "#1f9ec14d";
+        break;
+      case 3:
+        container.style.backgroundColor = "#996515";
+        break;
+      case 4:
+        container.style.backgroundColor = "#808080";
+        break;
+      case 5:
+        container.style.backgroundColor = "#df91484d";
+        break;
+      case 6:
+        container.style.backgroundColor = "#26B170";
+        break;
+      case 7:
+        container.style.backgroundColor = "#000000";
+        break;
+      // Add more cases as needed
+    }
+  };
+
+  let currentIndex = 0;
+
+  // Function to rotate to the next photo
+  const rotatePhotos = () => {
+    currentIndex = (currentIndex + 1) % galleryItem.length;
+    changePhoto(currentIndex);
+  };
+
+  // Set up the interval for automatic rotation (change every 5 seconds in this example)
+  const rotationInterval = 5000; // Adjust as needed
+  setInterval(rotatePhotos, rotationInterval);
+
+  // Initial setup to show the first photo
+  changePhoto(currentIndex);
+}
+          </script>
         </div>
         <div class="sponsorship" id="spons">
             <h1>SPONSORSHIP</h1>
@@ -447,6 +536,114 @@
 
 </body>
 <style>
+
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@700&display=swap");
+
+
+
+.container {
+	display: flex;
+	width: 100%;
+	padding: 0 20px;
+
+	transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.gallery {
+	&__inner {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 100vh;
+		overflow: hidden;
+	}
+
+	&__item {
+		position: relative;
+
+		display: flex;
+		flex: 1;
+		height: 80vh;
+
+		color: #fff;
+
+		border-radius: 20px;
+		overflow: hidden;
+
+		filter: grayscale(1);
+
+		transition: 0.8s ease-in-out;
+
+		cursor: pointer;
+
+		&.--active {
+			flex: 10;
+
+			filter: grayscale(0);
+
+			& > .gallery__title {
+				left: 20px;
+
+				opacity: 1;
+
+				background: hsla(231, 11%, 12%, 0.2);
+
+				transition: 0.5s ease-in 0.5s;
+			}
+		}
+
+		&:not(:last-child) {
+			margin-right: 20px;
+		}
+	}
+
+	&__item:nth-child(1) {
+		background: center / cover no-repeat
+			url("https://jscop.jiitopticachapter.in/images/Gallery/1.jpg");
+	}
+	&__item:nth-child(2) {
+		background: center / cover no-repeat
+			url("https://jscop.jiitopticachapter.in/images/Gallery/2.jpg");
+	}
+	&__item:nth-child(3) {
+		background: center / cover no-repeat
+			url("https://jscop.jiitopticachapter.in/images/Gallery/3.jpg");
+	}
+	&__item:nth-child(4) {
+		background: center / cover no-repeat
+			url("https://jscop.jiitopticachapter.in/images/Gallery/4.jpg");
+	}
+	&__item:nth-child(5) {
+		background: center / cover no-repeat
+			url("https://jscop.jiitopticachapter.in/images/Gallery/5.jpg");
+	}
+	&__item:nth-child(6) {
+		background: center / cover no-repeat
+			url("https://jscop.jiitopticachapter.in/images/Gallery/6.jpg");
+	}
+	&__item:nth-child(7) {
+		background: center / cover no-repeat
+			url("https://jscop.jiitopticachapter.in/images/Gallery/7.jpg");
+	}
+	&__item:nth-child(8) {
+		background: center / cover no-repeat
+			url("https://jscop.jiitopticachapter.in/images/Gallery/8.jpg");
+	}
+	
+
+	&__title {
+		position: absolute;
+		bottom: 20px;
+		left: 5px;
+
+		padding: 5px 10px;
+		opacity: 0;
+
+		font-size: 30px;
+
+		border-radius: 5px;
+	}
+}
     .timeline button{
         display: inline-block;
         padding: 15px 30px;
