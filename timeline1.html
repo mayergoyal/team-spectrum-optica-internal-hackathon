@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timeline</title>
+    <style>
+        * {
+    box-sizing: border-box;
+    outline: none;
+}
+
+body {
+    margin: 0;
+    padding: 30px 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.timeline-box {
+    padding: 40px 0;
+    margin: 40px auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.timeline-box:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    margin-left: -1px;
+    width: 2px;
+    height: 100%;
+    background: #CED4DA;
+    z-index: 1;
+}
+
+.timeline-card {
+    background-color: rgba(226, 226, 226, 0.784);
+    width: calc(50% - 9px);
+    height: 300px;
+    display: flex;
+    justify-content: space-between;
+    clear: both;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.timeline-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.rightc {
+    float: right;
+}
+
+.leftc {
+    float: left;
+    direction: rtl;
+}
+
+.marker {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 2px solid #F5F7FA;
+    background: #6C757D;
+    margin-top: 10px;
+    z-index: 9999;
+    transition: background 0.3s;
+}
+
+.timeline-card:hover .marker {
+    background: #495057;
+}
+
+.timeline-content {
+    width: 95%;
+    padding: 0 15px;
+    color: #495057;
+}
+
+.timeline-content h3 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 22px;
+    font-weight: 600;
+    color: #212529;
+}
+
+.timeline-content img{
+    width: 100%;
+    height: 100%;
+}
+
+.timeline-content p {
+    font-size: 15px;
+    line-height: 1.6em;
+    word-spacing: 1px;
+    color: #495057;
+}
+
+@media screen and (max-width: 768px) {
+    .timeline-box:before {
+        left: 8px;
+        width: 2px;
+    }
+    .timeline-card {
+        width: 100%;
+    }
+    .rightc,
+    .leftc {
+        float: none;
+    }
+    .leftc {
+        direction: ltr;
+    }
+}
+
+    </style>
+</head>
+<body>
+    
+
+    <div class="timeline-box">
+
+        <div class="timeline-card rightc">
+            <div class="marker"></div>
+            <div class="timeline-content">
+                <h3>INAUGURATION CEREMONY</h3>
+                <div>10:00 AM - 10:30 AM, LT4</div>
+                <img src="27908253_10211310702351709_2789465559696425761_o.jpg" alt="INAUGURATION">
+            </div>
+        </div>
+
+        <div class="timeline-card leftc">
+            <div class="marker"></div>
+            <div class="timeline-content">
+                <h3>TEA BREAK</h3>
+                <div>10:30 AM -11:00AM, In front of LT-4</div>
+                <img src="201603161053075876.jpg" alt="teak-break">
+            </div>
+        </div>
+
+        <div class="timeline-card rightc">
+            <div class="marker"></div>
+            <div class="timeline-content">
+                <h3>TALK-1</h3>
+                <div>11:00AM-12:00PM, LT-4</div>
+                <img src="Soundtalksession1_crop.jpg.preset.600.jpeg" alt="talk1">
+            </div>
+        </div>
+
+        <div class="timeline-card leftc">
+            <div class="marker"></div>
+            <div class="timeline-content">
+                <h3>TALK-2</h3>
+                <div>12:00 PM -12:45 PM, LT-4</div>
+                <img src="Soundtalksession1_crop.jpg.preset.600.jpeg" alt="talk2">
+            </div>
+        </div>
+
+        <div class="timeline-card rightc">
+            <div class="marker"></div>
+            <div class="timeline-content">
+                <h3>LUNCH</h3>
+                <div>12:45 PM-2:00 PM</div>
+                <img src="download (2).jpg" alt="lunch">
+            </div>
+        </div>
+
+        <div class="timeline-card leftc">
+            <div class="marker"></div>
+            <div class="timeline-content">
+                <h3>BLIND CODING</h3>
+                <div>2:00 PM - 4:00 PM, CL-1 - CL-4</div>
+                <img src="blindcoding.png" alt="">
+            </div>
+        </div>
+
+        <div class="timeline-card rightc">
+            <div class="marker"></div>
+            <div class="timeline-content">
+                <h3>TEA BREAK</h3>
+                <div>4:00 PM-4:20 PM, In front of LT-4</div>
+                <img src="teabreak.jpg" alt="teak-break">
+            </div>
+        </div>
+
+        <div class="timeline-card leftc">
+            <div class="marker"></div>
+            <div class="timeline-content">
+                <h3>CREATE | CODE | CRACK IT</h3>
+                <div>4:20 PM-5:00 pm, LAB E-11</div>
+                <img src="CCC compressed.jpeg" alt="">
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
