@@ -33,7 +33,6 @@
             background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
             overflow: auto;
             font-family: 'Poppins', sans-serif;
-            /* Allow scrolling */
             filter: drop-shadow(0 0 10px white);
             overflow-y: auto;
             overflow-x: hidden;
@@ -86,10 +85,12 @@
             color: white;
         }
 
+        /* ABOUT (VIDEO PAGE) */
+
         .maincontainer {
-            position: relative;
+            display: flex;
             width: 100%;
-            height: 100%;
+            height: 100vh;
             overflow: hidden;
             /* Prevent content overflow */
         }
@@ -169,10 +170,39 @@
             font-size: 28px;
             /* font-weight: bold; */
             z-index: 1;
-
-
         }
 
+        @media screen and (max-width: 768px) {
+        .maincontainer span {
+            font-size: 6em;
+        }
+
+        .jiitstudent {
+            font-size: 20px;
+        }
+
+        .mainbg video {
+        width: 100%;
+        height: auto;
+        }
+        }
+
+        @media screen and (max-width: 480px) {
+            .maincontainer span {
+                font-size: 4em;     
+            }
+
+            .jiitstudent {
+                font-size: 16px;
+            }
+
+            .mainbg video {
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        /* VIDEO SECT ENDS */
         .twomain {
             display: block;
 
@@ -447,7 +477,10 @@
         </div>
 
     </div>
+
+
     <div class="secondsection">
+
         <DIV id="events">
             <h1>EVENTS</h1>
             <div class="actualevents">
@@ -602,6 +635,7 @@
 
             </div>
         </div>
+
         <div class="timeline" id="time">
             <h1>TIMELINE</h1>
             <div class="day1">
@@ -633,6 +667,7 @@
             </div>
 <br><br>
         </div>
+
         <div class="gall" id="photo">
             <h1>GALLERY</h1>
             <setion class="gallery">
@@ -725,6 +760,7 @@
                 }
             </script>
         </div>
+        
         <div class="sponsorship" id="spons">
             <h1>SPONSORSHIP</h1>
 
@@ -779,6 +815,7 @@
     </div>
 
 </body>
+
 <style>
     @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@700&display=swap");
 
