@@ -475,6 +475,12 @@
         }
 
         /* SPONSORS END */
+        @media (max-width:770px){
+            .mainbg video{
+                width:auto;
+                height:auto;
+            }
+        }
     </style>
 </head>
 
@@ -618,7 +624,7 @@
             <h1>SPEAKERS</h1>
             <div class="speakerparent">
                 <div class="speakerinfo">
-                    <div class="card" style="width: 18rem; height:25rem;">
+                    <div class="card" >
                         <img src="https://jscop.jiitopticachapter.in/static/media/Speakers-CG.0208bf4abdc7815d6b88.jpg"
                             class="card-img-top" alt="...">
                         <div class="card-body">
@@ -638,7 +644,7 @@
                     </p>
                 </div>
                 <div class="speakerinfo">
-                    <div class="card" style="width: 18rem;">
+                    <div class="card" >
                         <img src="https://jscop.jiitopticachapter.in/static/media/Speakers-GK.7910426b801aa614d576.jpeg"
                             class="card-img-top" alt="...">
                         <div class="card-body">
@@ -659,7 +665,7 @@
                     </p>
                 </div>
                 <div class="speakerinfo">
-                    <div class="card" style="width: 18rem;">
+                    <div class="card" >
                         <img src="download.jpg" ; class="card-img-top"
                             alt="...">
                         <div class="card-body">
@@ -677,7 +683,7 @@
                         see you there
                     </p>
                 </div>
-                <div class="speakerinfo">
+                <!--<div class="speakerinfo">
                     <div class="card" style="width: 18rem;">
                         <img src="download (1).jpg" ; class="card-img-top"
                             alt="...">
@@ -694,7 +700,7 @@
                         <br>
                         see you there
                     </p>
-                </div>
+                </div>-->
 
             </div>
         </div>
@@ -704,7 +710,7 @@
             <div class="day1">
                <a href="day1.html">
                 <button>
-                    <span style="font-size: 35px;">DAY-1 SCHEDULE </span> <br><span style="font-size: 23px;">for pc view</span>
+                    <span style="font-size: 35px; ">DAY-1 SCHEDULE </span> <br><span style="font-size: 23px;">for pc view</span>
                 </button>
                </a>
                <a href="timeline1.html">
@@ -917,17 +923,24 @@
 </body>
 
 <style>
+    
     @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@700&display=swap");
 
-    .gallery{
+    #gallery{
         margin-left: 0;
         margin-right: 0;
     }
-
+       @media (max-width:950px){
+        .gallery__item{flex:0;
+        }
+        .gallery__item.--active{
+            flex:10;
+        }
+       }
     .container {
         display: flex;
         width: 100%;
-        padding: 0 20px;
+        padding: 0 10px;
         transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     }
 
@@ -935,7 +948,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        height: 100vh;
+        height: 80vh;
         overflow: hidden;
     }
 
@@ -943,7 +956,7 @@
         position: relative;
         display: flex;
         flex: 1;
-        height: 80vh;
+        height: 60vh;
         color: #fff;
         border-radius: 20px;
         overflow: hidden;
@@ -965,7 +978,7 @@
     }
 
     .gallery__item:not(:last-child) {
-        margin-right: 20px;
+        margin-right: 10px;
     }
 
     .gallery__item:nth-child(1) {
@@ -1040,6 +1053,7 @@
         margin-left: 312px;
         margin-right: 312px;
         justify-content: space-between;
+        flex-wrap: wrap;
     }
 
     .day2 {
@@ -1048,8 +1062,43 @@
         margin-left: 312px;
         margin-right: 312px;
         justify-content: space-between;
+        flex-wrap: wrap;
     }
-
+.day1 button{
+    margin-top: 20px;
+}
+.day2 button{
+    margin-top: 20px;
+}
+@media (max-width:700px)
+{
+    .day1 {
+        width:auto;
+        height:auto;
+       margin-left:0;
+       
+    }
+    .day2 {
+        width:auto;
+        height:auto;
+       margin-left:0;
+       
+    }
+}
+@media (max-width:635px){
+    .day1 {
+        width:635px;
+        height:auto;
+       margin-left:0;
+       
+    }
+    .day2 {
+        width:635px;
+        height:auto;
+       margin-left:0;
+       
+    }
+}
     #movingImage {
         position: absolute;
         width: 150px;
@@ -1084,6 +1133,7 @@
 
     .info:hover {
         opacity: 1;
+        font-size: 20px;
     }
 
     .info {
@@ -1095,6 +1145,7 @@
         box-shadow: 0 0 10px 5px rgba(78, 241, 92, 0.7), inset 0 0 10px 5px rgba(0, 0, 0, 0.5);
         /* Glowy shadow border */
         transition: box-shadow 0.3s;
+        
     }
     .secondsection {
         margin: 0;
@@ -1131,7 +1182,7 @@
 
     .speakerparent {
         display: flex;
-        flex-wrap: nowrap;
+        flex-wrap: wrap;
         justify-content: space-between;
     }
 
@@ -1139,8 +1190,8 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin: 10px;
-        padding: 50px;
+       margin-top: 50px;
+        margin-bottom: 0;
     }
 
     .card-text {
@@ -1152,10 +1203,12 @@
         /* Glowy shadow border */
         transition: box-shadow 0.3s;
         transform: translate(0, -400px);
-        width: 18rem;
-        height: 25rem;
+        width: 400px;
+        height: 450px;
         backdrop-filter: blur(-200px);
         /* Blur effect */
+        
+        
     }
 
     .card-text:hover {
@@ -1164,16 +1217,19 @@
     }
 
     .card-body:hover .card-text {
-        transition: translate(0, -400px);
+        transition: translate(0, -500px);
 
     }
 
     .card {
         box-shadow: 0 0 10px 5px rgba(78, 241, 92, 0.7), inset 0 0 10px 5px rgba(0, 0, 0, 0.5);
         /* Glowy shadow border */
+       
 
     }
-
+       .speakerinfo:hover .card{
+        transform: translate(0,50px);
+       }
     .card-body {
         background-color: black;
     }
@@ -1183,11 +1239,11 @@
     }
 
     .card-text {
-        transition: translate(0, -200px);
+        transition: translate(0, -300px);
     }
 
     .speakerinfo:hover .card-text {
-        transition: translate(0, -200px);
+        transition: translate(0, -250px);
         opacity: 1;
     }
 
@@ -1203,6 +1259,7 @@
         transition: box-shadow 0.3s;
         opacity: 1;
         transition: translate(0, -400px);
+
     }
 
     .eventinfo:hover .eventname {
@@ -1273,6 +1330,7 @@
         padding: 0%;
 
     }
+    
 
     .secondsection {
         background-color: black;
@@ -1341,6 +1399,92 @@
 
     .speakers {
         background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+    }
+    .card{
+        width:400px;
+        height:450px;
+    }
+    .card img{
+        width:400px;
+        height:350px;
+    }
+    .card-title{
+        width:350px;
+        height:80px;
+    }
+    @media (max-width:500px){
+        .card{
+        width:250px;
+        height:300px;
+        justify-content: center;
+        margin-left: 20vw;
+    }
+    .card img{
+        width:250px;
+        height:150px;
+    }
+    .card-title{
+        width:200px;
+        height:80px;
+    }
+    .card-text{
+        width:250px;
+        height:300px;
+        transform: translate(40px,-250px);
+        justify-content: center;
+    }
+    .eventinfo{
+        width:300px;
+        height:800px;
+        
+    }
+    }
+    #gallery{
+        width:auto;
+        height:auto;
+    }
+@media (max-width:938px){
+    .eventinfo{
+        margin-left: 50px;
+        margin-right: 180px;
+    }
+}
+@media (max-width:440px){
+    .eventinfo{
+       width:200px;
+       height:900px;
+       
+    }
+
+}
+@media (max-width:350px){
+    .eventinfo img{
+       width:200px;
+       height:300px;
+       
+    }
+    .eventinfo{
+        border:none;
+    }
+
+}
+
+
+    @media (max-width:810px){
+        .card{
+        width:250px;
+        height:300px;
+        justify-content: center;
+        margin-left: 20vw;
+        margin-right:20vw;
+    }
+    
+    .card-text{
+        width:250px;
+        height:300px;
+        transform: translate(40px,-250px);
+        justify-content: center;
+    }
     }
 </style>
 

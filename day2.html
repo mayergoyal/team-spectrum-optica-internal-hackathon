@@ -4,8 +4,26 @@
 <head>
     <!-- Your head content remains unchanged -->
 </head>
-
+<style>
+    .option{
+        opacity:0;
+    }
+    @media (max-width:1280px)
+    {
+        .option{
+            opacity:1;
+        }
+        .roadsection{
+            opacity:0;
+        }
+        .option2{
+            opacity:0;
+        }
+    }
+</style>
 <body>
+    <h4 class="option" style="color: white;">THIS IS NOT FOR THIS VIEW </h4>
+    <h1 class="option2">DAY 2 SCHEDULE</h1>
     <div class="roadsection">
         <img class="roadimg" src="road.jpg" alt="">
         <div class="content-wrapper">
@@ -69,7 +87,7 @@
                 </div>
                 <div class="event" style="margin-left: 900px; width:100px;margin-top: 450px;">
 
-                    <div class="description" style="transform: translate(-50px,-300px);">
+                    <div class="description" style="transform: translate(-50px,-380px); height:200px;">
                         <img src="squidgame.jpg" alt="">
                         <button>
                             SQUID GAME<BR>
